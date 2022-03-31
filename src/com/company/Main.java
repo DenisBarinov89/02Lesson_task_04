@@ -5,15 +5,15 @@ public class Main {
     public static void main(String[] args) {
 
         int deliveryDistance = 95;
-        int timeToClient = 0;
-        int buffer = (deliveryDistance - 20) / 40;
+        int timeToClient = 1;
 
-        if (deliveryDistance <= 20) {
-            timeToClient = 1;            
+        if (deliveryDistance < 20) {
+            timeToClient = 1;
+        } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
+            timeToClient++;
+        } else {
+            timeToClient = timeToClient + 2;
         }
-        else {
-            timeToClient = buffer + 2;
-        }
-        System.out.println("Срок доставки:"+timeToClient);
+        System.out.println("Срок доставки:" + timeToClient);
     }
 }
